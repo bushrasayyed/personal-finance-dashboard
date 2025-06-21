@@ -1,54 +1,80 @@
-# React + TypeScript + Vite
+💸 Personal Finance Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Screenshot (76)](https://github.com/user-attachments/assets/49d90af1-e693-4724-ab31-12cd473a0059)
+![Screenshot (77)](https://github.com/user-attachments/assets/462b794a-2387-4ff4-9666-afef0076141d)
 
-Currently, two official plugins are available:
+A modern and responsive web application to track your income and expenses, visualize financial insights, and manage your money efficiently — built using **React**, **Vite**, **TypeScript**, and **Material UI**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🌐 **Live Demo:**  
+[View on ](https://personal-finance-dashboard-beta.vercel.app/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- 📊 **Summary Cards** for Income, Expenses, and Balance
+- 📅 **Date and Category Filters** for transactions
+- 🥧 **Pie Chart** showing expenses by category
+- 📈 **Bar Chart** comparing monthly income and expenses
+- 🌗 **Light / Dark Mode Toggle**
+- 📱 **Responsive Design** for mobile, tablet, and desktop
+- 💡 **Smooth UX** with animations, hover effects, and intuitive layout
+---
+
+## 🛠 Tech Stack
+
+| Tool           | Purpose                            |
+|----------------|-------------------------------------|
+| **React**      | Core frontend framework             |
+| **Vite**       | Fast build tool and dev server      |
+| **TypeScript** | Static typing and better dev flow   |
+| **MUI (v5)**   | Material Design UI components       |
+| **Chart.js**   | Data visualizations (Pie & Bar)     |
+| **Date-fns**   | Date formatting and parsing         |
+| **Vercel**     | Deployment platform                 |
+
+---
+
+## 🧑‍💻 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/personal-finance-dashboard.git
+cd personal-finance-dashboard
+````
+
+### 2. Install dependencies
+
+```bash
+yarn install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+> If you use npm, you can also run:
+>
+> ```bash
+> npm install
+> ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 3. Run the development server
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+yarn dev
 ```
+
+or
+
+```bash
+npm run dev
+```
+
+---
+
+### 🔗 Open in your browser
+
+Once the server is running, open:
+
+```
+http://localhost:5173
+```
+
