@@ -1,13 +1,13 @@
 💸 Personal Finance Dashboard
 
-![Screenshot (76)](https://github.com/user-attachments/assets/49d90af1-e693-4724-ab31-12cd473a0059)
-![Screenshot (77)](https://github.com/user-attachments/assets/462b794a-2387-4ff4-9666-afef0076141d)
-
 A modern and responsive web application to track your income and expenses, visualize financial insights, and manage your money efficiently — built using **React**, **Vite**, **TypeScript**, and **Material UI**.
 
 🌐 **Live Demo:**  
 [View on ](https://personal-finance-dashboard-beta.vercel.app/)
 
+---
+![Screenshot (76)](https://github.com/user-attachments/assets/49d90af1-e693-4724-ab31-12cd473a0059)
+![Screenshot (77)](https://github.com/user-attachments/assets/462b794a-2387-4ff4-9666-afef0076141d)
 ---
 
 ## ✨ Features
