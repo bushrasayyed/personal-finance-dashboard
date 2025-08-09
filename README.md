@@ -1,80 +1,78 @@
-💸 Personal Finance Dashboard
-
-A modern and responsive web application to track your income and expenses, visualize financial insights, and manage your money efficiently — built using **React**, **Vite**, **TypeScript**, and **Material UI**.
+# 💸 Finlytico – Personal Finance Dashboard
+A modern, responsive personal finance dashboard to add, edit, and delete income/expense transactions, track your spending, and view insightful analytics. Built with React, TypeScript, and Firebase, it provides category-based visualizations, monthly trends, and full data reset from settings — all in a smooth, theme-friendly UI.
 
 🌐 **Live Demo:**  
-[View on ](https://personal-finance-dashboard-beta.vercel.app/)
+[**View Finlytico**](https://personal-finance-dashboard-beta.vercel.app/)
 
----
-![Screenshot (76)](https://github.com/user-attachments/assets/49d90af1-e693-4724-ab31-12cd473a0059)
-![Screenshot (77)](https://github.com/user-attachments/assets/462b794a-2387-4ff4-9666-afef0076141d)
 ---
 
 ## ✨ Features
 
-- 📊 **Summary Cards** for Income, Expenses, and Balance
-- 📅 **Date and Category Filters** for transactions
-- 🥧 **Pie Chart** showing expenses by category
-- 📈 **Bar Chart** comparing monthly income and expenses
-- 🌗 **Light / Dark Mode Toggle**
-- 📱 **Responsive Design** for mobile, tablet, and desktop
-- 💡 **Smooth UX** with animations, hover effects, and intuitive layout
+- 💰 **Add, Edit & Delete Transactions** – Full CRUD for income & expense entries.
+- 📊 **Analytics Dashboard** – Category-wise **Pie Chart** and monthly trend **Bar Chart**.
+- 📅 **Date & Category Filters** – Filter transactions instantly.
+- 🌓 **Light / Dark Theme Toggle** – Theme preference saved automatically.
+- 🗑 **Reset All Data** – Clear transactions & settings from **Settings** page.
+- 📱 **Responsive UI** – Optimized for mobile, tablet, and desktop.
+- ⚡ **Smooth Animations** – Powered by Framer Motion for a polished experience.
+- 🔔 **Snackbar Notifications** – Using Notistack for instant feedback.
+
 ---
 
 ## 🛠 Tech Stack
 
-| Tool           | Purpose                            |
-|----------------|-------------------------------------|
-| **React**      | Core frontend framework             |
-| **Vite**       | Fast build tool and dev server      |
-| **TypeScript** | Static typing and better dev flow   |
-| **MUI (v5)**   | Material Design UI components       |
-| **Chart.js**   | Data visualizations (Pie & Bar)     |
-| **Date-fns**   | Date formatting and parsing         |
-| **Vercel**     | Deployment platform                 |
+| Technology / Library       | Purpose |
+|----------------------------|---------|
+| **React (Vite)**           | Core frontend framework & fast bundler |
+| **TypeScript**             | Type safety & better development flow |
+| **Firebase Firestore**     | Cloud database for transactions |
+| **Material UI (MUI v5)**   | Component library for responsive design |
+| **Chart.js + react-chartjs-2** | Data visualizations |
+| **Framer Motion**          | Animations & transitions |
+| **Lucide React**           | Clean, customizable icons |
+| **Notistack**              | Snackbar notifications |
+| **Date-fns**               | Date formatting & utilities |
+| **Vercel**                 | Deployment platform |
 
 ---
-
-## 🧑‍💻 Getting Started
+## 🚀 Getting Started
 
 ### 1. Clone the repository
 
 ```bash
 git clone https://github.com/your-username/personal-finance-dashboard.git
 cd personal-finance-dashboard
-````
+```
 
-### 2. Install dependencies
+### 2. Install dependencies 
 
 ```bash
 yarn install
+# or 
+npm install
+
 ```
+### 3. Setup environment variables
 
-> If you use npm, you can also run:
->
-> ```bash
-> npm install
-> ```
+Create a `.env` file in the project root:
 
-### 3. Run the development server
+```env
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_project_id.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
 
-```bash
+```
+### 4.  Run the development server
+```
 yarn dev
-```
-
-or
-
-```bash
+# or
 npm run dev
 ```
-
----
-
-### 🔗 Open in your browser
-
-Once the server is running, open:
-
+### 5. Open in your browser:
 ```
 http://localhost:5173
 ```
-
+---
