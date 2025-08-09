@@ -1,7 +1,8 @@
-export type Transaction = {
-  id: number;
+export interface Transaction {
+  id: string;
   type: 'income' | 'expense';
-  category: string;
+  category?: string;
   amount: number;
-  date: string; // ISO format,e.g."2025-06-10"
-};
+  date: string;
+  notes?: string;
+}

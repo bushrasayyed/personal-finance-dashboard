@@ -1,89 +1,73 @@
 import { useState } from 'react';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Drawer from '@mui/material/Drawer';
-import Sidebar from '../components/Sidebar';
-import Header from '../components/Header';
-import type { ReactNode } from 'react';
+import { Outlet } from 'react-router-dom';
+import { Box, CssBaseline, Toolbar, AppBar, Typography, IconButton, Tooltip } from '@mui/material';
+import { Menu as MenuIcon, Sun, Moon } from 'lucide-react';
+import Sidebar from '../components/Dashboard/Sidebar';
+import { useThemeContext } from '../context/ThemeContext';
 
 const drawerWidth = 240;
 
-interface Props {
-  children: ReactNode;
-}
-
-const DashboardLayout = ({ children }: Props) => {
+const DashboardLayout = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { mode, toggleMode } = useThemeContext();
 
   const handleDrawerToggle = () => {
-    setMobileOpen(prev => !prev);
+    setMobileOpen(!mobileOpen);
   };
 
   return (
-    <Box sx={{ display: 'flex', height: '100vh', width: '100vw', overflow: 'hidden' }}>
+    <Box sx={{ display: 'flex' }}>
       <CssBaseline />
 
-      {/* Mobile Sidebar Drawer */}
-      <Drawer
-        variant="temporary"
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
-        ModalProps={{ keepMounted: true }}
+      <AppBar
+        position="fixed"
         sx={{
-          display: { xs: 'block', md: 'none' },
-          '& .MuiDrawer-paper': {
-            width: drawerWidth,
-          },
+          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          ml: { sm: `${drawerWidth}px` },
+          zIndex: theme => theme.zIndex.drawer + 1,
         }}
       >
-        <Sidebar onNavigate={handleDrawerToggle} />
-      </Drawer>
+        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Box display="flex" alignItems="center">
+            <IconButton
+              color="inherit"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: 'none' } }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" noWrap component="div">
+              Personal Finance Dashboard
+            </Typography>
+          </Box>
 
-      {/* Permanent Sidebar for desktop */}
-      <Box
-        component="nav"
-        sx={{
-          width: { md: drawerWidth },
-          flexShrink: { md: 0 },
-          display: { xs: 'none', md: 'block' },
-        }}
-      >
-        <Box
-          sx={{
-            width: drawerWidth,
-            height: '100%',
-            bgcolor: 'background.paper',
-            borderRight: '1px solid #ddd',
-          }}
-        >
-          <Sidebar />
-        </Box>
-      </Box>
+          {/* Theme Toggle */}
+          <Tooltip title={mode === 'dark' ? 'Light Mode' : 'Dark Mode'}>
+            <IconButton onClick={toggleMode} color="inherit" size="small">
+              {mode === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
+            </IconButton>
+          </Tooltip>
+        </Toolbar>
+      </AppBar>
 
-      {/* Main content */}
+      <Sidebar mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} />
+
       <Box
+        component="main"
         sx={{
           flexGrow: 1,
-          display: 'flex',
-          flexDirection: 'column',
           width: '100%',
-          overflow: 'hidden',
+          ml: { sm: `${drawerWidth}px`, xs: 0 },
+          px: { xs: 1.5, sm: 3 },
+          py: { xs: 2, sm: 3 },
+          mt: { xs: '64px', sm: '64px' },
+          minHeight: '100vh',
+          boxSizing: 'border-box',
+          overflowX: 'hidden',
         }}
       >
-        {/* Pass toggle button to Header */}
-        <Header onMenuClick={handleDrawerToggle} />
-
-        <Box
-          component="main"
-          sx={{
-            flexGrow: 1,
-            p: { xs: 2, sm: 3, md: 4 },
-            width: '100%',
-            overflowY: 'auto',
-          }}
-        >
-          {children}
-        </Box>
+        <Outlet />
       </Box>
     </Box>
   );
